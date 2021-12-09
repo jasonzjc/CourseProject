@@ -11,14 +11,15 @@
     <h1> My First Try Using Flask </h1>
     <p> Key Phrases </p>
 
-    {% for each in keywords %}
-    <p>{{ each }}</p>
+    {% for word,url in keywords.items() %}
+    <p><a href="{{  url  }}" target="_blank">{{ word }}</a></p>
     {% endfor %}
     
     {% endblock %}
 
     {% block video %}
     <h1> Video </h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ao41FrJFgvQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     {% endblock %}
   </body>
 </html>

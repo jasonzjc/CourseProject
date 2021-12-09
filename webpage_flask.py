@@ -4,7 +4,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    mylist = ['a','b']
+    # mylist = ['a','b']
+    mylist = {'a':'http://www.google.com','b':'http://www.youtube.com'}
     return render_template("home.html",keywords = mylist)
     
 @app.route("/about")
