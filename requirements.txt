@@ -1,0 +1,3 @@
+flask
+keybert
+youtube_transcript_api
