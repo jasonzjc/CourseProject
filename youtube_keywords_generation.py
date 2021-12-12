@@ -176,9 +176,9 @@ def get_keywords_links(finder,docs):
     for keyword, first_location in keywords_first_location.items():
         title = first_location[0]
         video_name = play_list[title][0]
-        video_url_embed = 'https://www.youtube.com/embed/' + video_name
+        # video_url_embed = 'https://www.youtube.com/embed/' + video_name
         start_time = int(first_location[1]['start'])
-        video_time_url = video_url_embed + '?start={}'.format(start_time)
+        video_time_url = video_name + ':{}'.format(start_time)
         keywords_links[keyword] = video_time_url
     return keywords_links
         
