@@ -3,7 +3,7 @@ import os, json, re
 
 app = Flask(__name__)
 
-url = 'https://www.youtube.com/playlist?list=PLUl4u3cNGP61iQEFiWLE21EJCxwmWvvek'
+url = 'https://www.youtube.com/playlist?list=PLUl4u3cNGP63z5HAguqleEbsICfHgDPaG'
 playlist_name = re.search('playlist\?list=(.+)',url).group(1)
 
 @app.route("/")

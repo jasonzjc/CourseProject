@@ -94,9 +94,10 @@ body {
 
   .flex-child2 {
     flex: 3;
+    padding:1em;
     border: 2px solid black;
   }  
 
   .flex-child2:first-child:first-child {
-    margin-right: 20px;
+    margin-right: 40px;
   } 
