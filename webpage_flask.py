@@ -1,9 +1,10 @@
 from flask import Flask, render_template
-import os, json
+import os, json, re
 
 app = Flask(__name__)
 
-playlist_name = 'PLUl4u3cNGP61iQEFiWLE21EJCxwmWvvek'
+url = 'https://www.youtube.com/playlist?list=PLUl4u3cNGP61iQEFiWLE21EJCxwmWvvek'
+playlist_name = re.search('playlist\?list=(.+)',url).group(1)
 
 @app.route("/")
 def home():
