@@ -38,6 +38,7 @@ After the extraction of key phrases, they are located in the videos. In the curr
 
 ## Platform Integration
 The key phrases and their locations are demonstrated in a Webpage. The webpage is generated with [FLASK](https://flask.palletsprojects.com/). The key phrases are listed on the left side of the page, with a link including the corresponding video ID and timestamp. The video block locates on its right. When clicking the link of a key phrase, the corresponding YouTube video will be refreshed on its right. By clicking the play button, the embedded video will automatically start from the timestamp when this keyphrase is introduced.
+![alt text](https://github.com/jasonzjc/CourseProject/blob/Pre-publish/images/playlist.png?raw=true)
 
 ## Further Improvements
 If this project is to be continued in the future, I would like to improve the key phrase geneartion algorithm. E.g., including the context into the algorithm. Titles of each video is a good candidate to improve the accuracy in key phrase generation. Also, the location of a key phrase is not necessary in the first time it is mentioned. Senmentical analysis can be used to pinpoint the sentence(s) it is explained. Thirdly, the platform can be improve to better integrate the key phrase, the transcript, and the video. The key phrases can be hierarchied to form the structure of a course.
