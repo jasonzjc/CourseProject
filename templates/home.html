@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Multimedia Textbook</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    
+    <h1> Key Phrases</h1>
+    <!-- <h2> Key Phrases </h2> -->
+
+    {% for word,url in keywords.items() %}
+    <p><a href="/videos/{{  url  }}">{{ word }}</a></p>
+    {% endfor %}
+    
+    {% endblock %}
+
+    {% block video %}
+    <h1> Video </h1>
+    <iframe width="560" height="315" src="{{ video_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {% endblock %}
+  </body>
+</html>
