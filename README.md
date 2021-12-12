@@ -54,7 +54,7 @@ The software is supposed to run on Python 3.6.14 and above.
 7. Open http://127.0.0.1:5000/ in your browser. You should be able to click the key phrases and see the change of videos.
 
 # Video Demonstration
-YouTube: https://youtu.be/K23OyTei1vk
+YouTube: https://youtu.be/K23OyTei1vk  
 Illinois.edu: https://mediaspace.illinois.edu/media/t/1_xzz7ab9j
 
 # Contribution

@@ -1,4 +1,7 @@
-# %% [markdown]
+# This is the orignal tool to generate the keywords and key phrases from downloaded vtt files. 
+# It is no longer a part of the current tool, but can be used in the future.
+
+
 # # Try KeyBERT for Keyword Extraction
 # Use Python 3.6.14  
 # Need to install [keybert](https://github.com/MaartenGr/KeyBERT):
