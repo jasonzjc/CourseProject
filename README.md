@@ -21,7 +21,7 @@ They are explained in details below.
 
 ## Data Collection
 The data collection module is to collect the essential contents of the user specified course, includes the URL of each video and the transcript of each video. The URL of a YouTube playlist is like this: https://www.youtube.com/playlist?list=PLUl4u3cNGP61iQEFiWLE21EJCxwmWvvek. The string after 'list=' is its list ID. In this page, all the videos are listed. 
-![alt text](https://github.com/[jasonzjc]/[CourseProject]/blob/[Development]/images/playlist.pgn?raw=true)
+![alt text](https://github.com/jasonzjc/CourseProject/blob/Pre-publish/images/playlist.png?raw=true)
 
 First of all, the title and URL of each video is scraped using [BeautifulSoupt](https://www.crummy.com/software/BeautifulSoup/bs4/doc/). The URL of a YouTube video is typically like this: https://www.youtube.com/watch?v=YrHlHbtiSM0. The string after 'v=' is its unique video ID. Therefore, we can obtain the video IDs in this playlist. With the video ID, we can crawl its transcript. Here [YouTubeTranscriptApi](https://github.com/jdepoix/youtube-transcript-api) is used to get the transcripts.
 
