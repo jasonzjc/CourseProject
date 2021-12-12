@@ -101,7 +101,7 @@ class KeyPhraseFinder:
         keywords_yk = kw_extractor_yk.extract_keywords(doc)
         return keywords_yk
 
-    def train_bert_with_cand(self,doc,candidate_words,diverse):
+    def train_bert_with_cand(self,doc,candidate_words,diverse,top_n):
 
         '''
         Train Bert to generate key phrases
@@ -112,7 +112,7 @@ class KeyPhraseFinder:
         candidates = [candidate[0] for candidate in candidate_words]
 
         kw_model = KeyBERT('all-MiniLM-L6-v2')
-        keywords = kw_model.extract_keywords(doc, candidates=candidates,use_mmr=True, diversity=diverse)
+        keywords = kw_model.extract_keywords(doc, candidates=candidates,use_mmr=True, diversity=diverse, top_n = top_n)
 
         return keywords
 
@@ -140,7 +140,7 @@ class KeyPhraseFinder:
             word_location_dic[word] = self.locate_word(doc_indexed,word)
         return word_location_dic
 
-    def find_keywords(self,all_doc,topK=50,diverse_factor=0.7):
+    def find_keywords(self,all_doc,topK=100,diverse_factor=0.7,top_n=20):
 
         '''
         find key phrases and their locations with the input of a Documents instance
@@ -148,7 +148,7 @@ class KeyPhraseFinder:
 
         print('Finding keywords...')
         keywords_yk = self.train_yk(all_doc.get_doc(),topK)
-        keywords_bert = self.train_bert_with_cand(all_doc.get_doc(),keywords_yk,diverse_factor)
+        keywords_bert = self.train_bert_with_cand(all_doc.get_doc(),keywords_yk,diverse_factor,top_n)
 
         self.keywords_list = [word[0] for word in keywords_bert]
         self.keywords_locations =self.locate_all_words(all_doc.get_doc_indexed(),self.keywords_list)
@@ -194,21 +194,14 @@ def dump_to_json(docs,content,folder_name):
         json.dump(content,json_file)
 
 if __name__ == "__main__":
-    url = 'https://www.youtube.com/playlist?list=PLUl4u3cNGP61iQEFiWLE21EJCxwmWvvek'
+    url = 'https://www.youtube.com/playlist?list=PLUl4u3cNGP63z5HAguqleEbsICfHgDPaG'
+    keywords_no = 20
+    diverse_fc=0.5
     mydocs = Documents(url)
     finder = KeyPhraseFinder()
 
-    finder.find_keywords(mydocs)
+    finder.find_keywords(mydocs,diverse_factor=diverse_fc,top_n=keywords_no)
 
     keywords_links = get_keywords_links(finder,mydocs)
     dump_to_json(mydocs,mydocs.get_doc_indexed(),'doc_indexed')
     dump_to_json(mydocs,keywords_links,'key_url')
-
-    # keywordslist = finder.get_keywords_list()
-    # keywordslocation = finder.get_keywords_locations()
-
-    # print('Keywords: ')
-    # print(keywordslist)
-
-    # print('Keywords Locations: ')
-    # print(keywordslocation)

@@ -5,12 +5,12 @@
 The topic of this project is to organize the scattered lectures into a coherent “multimedia textbook” and create an index.  A course typically covers many words, but only a few are key words and relates to the knowledge introduced in the course. The learner may like to quickly find the lecture or the location a specific topic is presented, or a specific key word is defined and explained. This topic relates to the text retrieval, language model, and topic analysis introduced in the text information system class.
 
 # Software Implementation
-## Dataset Selction
+## Dataset Selection
 Originally, I plan to use the content of this course as an example, and I did extracted the key phrases (i.e. index) of this course. However, I then found no way to embed the Coursera videos into my webpage. I believe this is due to that Coursera does not allow video embedding. Furthermore, I found no explicity way to generate a link to a specific timestamp on Coursera videos. Therefore, I have to turn to an alternative solution.  
 In this project, I used open course playlists in YouTube as the input data, because:
-1. There are a good bunch of these courses in YouTube, e.g. MIT OCW.
-2. The transcripts are well-orgniazed.
-3. YouTube allows users to embed its vidoes to webpages.
+1. There are a good bunch of these courses in YouTube, e.g., MIT OCW.
+2. The transcripts are corrected and well-organized
+3. YouTube allows users to embed its videos to webpages.
 
 ## Software Structure
 This software is constructed from three modules:
@@ -38,7 +38,7 @@ After the extraction of key phrases, they are located in the videos. In the curr
 
 ## Platform Integration
 The key phrases and their locations are demonstrated in a Webpage. The webpage is generated with [FLASK](https://flask.palletsprojects.com/). The key phrases are listed on the left side of the page, with a link including the corresponding video ID and timestamp. The video block locates on its right. When clicking the link of a key phrase, the corresponding YouTube video will be refreshed on its right. By clicking the play button, the embedded video will automatically start from the timestamp when this keyphrase is introduced.
-![alt text](https://github.com/jasonzjc/CourseProject/blob/Pre-publish/images/playlist.png?raw=true)
+![alt text](https://github.com/jasonzjc/CourseProject/blob/Pre-publish/images/platform.png?raw=true)
 
 ## Further Improvements
 If this project is to be continued in the future, I would like to improve the key phrase geneartion algorithm. E.g., including the context into the algorithm. Titles of each video is a good candidate to improve the accuracy in key phrase generation. Also, the location of a key phrase is not necessary in the first time it is mentioned. Senmentical analysis can be used to pinpoint the sentence(s) it is explained. Thirdly, the platform can be improve to better integrate the key phrase, the transcript, and the video. The key phrases can be hierarchied to form the structure of a course.
@@ -52,6 +52,10 @@ The software is supposed to run on Python 3.6.14 and above.
 5. Open `youtube_scrape_playlist.py` and replace the `url` value with your URL in the `__main__` function (Line 46). Run this file.
 6. Open `webpage_flask.py` and replace the `url` value with your URL (Line 6). Run this file. 
 7. Open http://127.0.0.1:5000/ in your browser. You should be able to click the key phrases and see the change of videos.
+
+# Video Demonstration
+YouTube: https://youtu.be/K23OyTei1vk
+Illinois.edu: https://mediaspace.illinois.edu/media/t/1_xzz7ab9j
 
 # Contribution
 Jiecheng Zhao (NetID: jz109) is the only member of this team.
