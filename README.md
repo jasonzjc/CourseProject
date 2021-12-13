@@ -49,8 +49,8 @@ The software is supposed to run on Python 3.6.14 and above.
 2. Run `pip3 install -r requirements.txt` to ensure you have the required packages to run this project.
 3. Ensure you have a Chrome browser installed. Check its version and download the corresponding chromedriver [here](https://chromedriver.chromium.org/downloads). Use it to overwrite the chromedriver file in the repo.
 4. Find a course playlist from YouTube. You can find a lot of playlists [here](https://www.youtube.com/c/mitocw). Be sure you copied the URL of a **playlist**, in a form like this: https://www.youtube.com/playlist?list=PLUl4u3cNGP63z5HAguqleEbsICfHgDPaG
-5. Open `youtube_scrape_playlist.py` and replace the `url` value with your URL in the `__main__` function (Line 46). Run this file.
-6. Open `webpage_flask.py` and replace the `url` value with your URL (Line 6). Run this file. 
+5. Open `youtube_keywords_generation.py` and replace the `url` value with your URL in the `__main__` function (Line 207). Run this file.
+6. Open `webpage_flask.py` and replace the `url` value with your URL (Line 7). Run this file. 
 7. Open http://127.0.0.1:5000/ in your browser. You should be able to click the key phrases and see the change of videos.
 
 # Video Demonstration

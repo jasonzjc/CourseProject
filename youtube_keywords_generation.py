@@ -163,6 +163,11 @@ class KeyPhraseFinder:
 
     def get_keywords_first_location(self):
 
+        '''
+        select the first location where each key phrase appears
+        return the location together with the corresponding key phrase
+        '''
+
         for keyword,locations in self.keywords_locations.items():
             self.keywords_first_location[keyword] = locations[0]
 
@@ -184,6 +189,11 @@ def get_keywords_links(finder,docs):
         
 
 def dump_to_json(docs,content,folder_name):
+    
+    '''
+    dump the input content into corresponding folder
+    the file name is prefixed with the playlist ID
+    '''
 
     url = docs.get_url()
     playlist_name = re.search('playlist\?list=(.+)',url).group(1)
@@ -194,9 +204,10 @@ def dump_to_json(docs,content,folder_name):
         json.dump(content,json_file)
 
 if __name__ == "__main__":
-    url = 'https://www.youtube.com/playlist?list=PLUl4u3cNGP63z5HAguqleEbsICfHgDPaG'
-    keywords_no = 20
-    diverse_fc=0.5
+    url = 'https://www.youtube.com/playlist?list=PLUl4u3cNGP63z5HAguqleEbsICfHgDPaG'    # playlist URL
+    keywords_no = 20    # number of keywords to generate
+    diverse_fc=0.5      # diverse factor, from 0 (no diver requirements) to 1 (ver diverse)
+
     mydocs = Documents(url)
     finder = KeyPhraseFinder()
 
